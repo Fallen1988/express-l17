@@ -5,6 +5,7 @@ const { list } = require('./list');
 const { create } = require('./create');
 const { update } = require('./update');
 const { remove } = require('./remove');
+const {answers} = require('./answers');
 
 
 /**
@@ -30,6 +31,7 @@ module.exports = (models, { config }) => {
   api.post('/', create(models, { config }));
   api.patch('/:_id', update(models, { config }));
   api.delete('/:_id', remove(models, { config }));
+  api.get('/:_id/answers', answers(models, { config }));
 
   return api;
 };

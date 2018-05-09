@@ -15,7 +15,7 @@ const list = ({ Question }, { config }) => async (req, res, next) => {
       .limit(limit)
       .sort({ _id: -1 });
 
-    res.status(200).send({ questions });
+    res.status(200).send({questions});
   } catch (error) {
     next(error);
   }
